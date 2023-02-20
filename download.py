@@ -39,12 +39,4 @@ with open('sinetxt.txt', 'r', encoding='utf-8') as f:
                 f.close()
             print("Saved: " + name + '.jpg')
 
-os.system(
-    'git config user.email "41898282+github-actions[bot]@users.noreply.github.com"')
-os.system('git config user.name "github-actions[bot]')
-
-print("Push change...")
-os.system('git add .')
-os.system('git commit -m "[bot] Update Images"')
-os.system('git push')
 print("Done!")
