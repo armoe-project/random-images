@@ -1,0 +1,22 @@
+name: Auto Download schedules
+on:
+  push:
+  workflow_dispatch:
+    branches:
+      - main
+  schedule:
+    - cron: "0 12 * * *" # 半天更新一次
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+          cache: "pip"
+      - name: Install Pypi Packages
+        run: pip install -r requirements.txt
+      - name: Run Python Scripts
+        run: python download.py
