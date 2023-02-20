@@ -34,7 +34,7 @@ with open('sinetxt.txt', 'r', encoding='utf-8') as f:
         else:
             print("Downloading: " + name + '.jpg')
             response = requests.get(url)
-            with open('images\\' + name + ".jpg", 'wb') as f:
+            with open('images/' + name + ".jpg", 'wb') as f:
                 f.write(response.content)
                 f.close()
             print("Saved: " + name + '.jpg')
