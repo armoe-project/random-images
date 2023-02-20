@@ -29,9 +29,7 @@ with open('sinetxt.txt', 'r', encoding='utf-8') as f:
     for url in f.readlines():
         name = url.strip('\n')
         url = "https://tva1.sinaimg.cn/large/" + name
-        if os.path.exists('images/' + name + '.jpg'):
-            print("Already exists: " + name + '.jpg')
-        else:
+        if os.path.exists('images/' + name + '.jpg') == False:
             print("Downloading: " + name + '.jpg')
             response = requests.get(url)
             with open('images/' + name + ".jpg", 'wb') as f:
