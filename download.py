@@ -4,7 +4,7 @@ import requests
 
 
 print('Download new sinetxt...')
-response = requests.get('https://www.dmoe.cc/sinetxt.txt')
+response = requests.get('https://www.dmoe.cc/sinetxt.txt', verify=False)
 new_file = response.content
 
 with open('sinetxt.txt', 'rb') as f:
