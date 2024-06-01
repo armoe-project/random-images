@@ -1,6 +1,7 @@
 import os
 import hashlib
 import requests
+from PIL import Image
 
 def convert_image_to_webp(image_file_name):
     """
