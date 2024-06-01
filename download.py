@@ -66,7 +66,7 @@ with open('sinetxt.txt', 'r', encoding='utf-8') as f:
 
         # 创建存储图片的文件夹，如果不存在的话
         if not os.path.exists("images"):
-        os.makedirs("images")
+            os.makedirs("images")
 
         # 如果本地不存在同名的图片文件，下载并保存图片
         if os.path.exists('images/' + name + '.jpg') == False:
