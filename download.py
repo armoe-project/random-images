@@ -64,6 +64,10 @@ with open('sinetxt.txt', 'r', encoding='utf-8') as f:
         name = url.strip('\n')  # 去除行尾的换行符，得到图片的名字
         url = "https://tva1.sinaimg.cn/large/" + name  # 构造图片的URL
 
+        # 创建存储图片的文件夹，如果不存在的话
+        if not os.path.exists("images"):
+        os.makedirs("images")
+
         # 如果本地不存在同名的图片文件，下载并保存图片
         if os.path.exists('images/' + name + '.jpg') == False:
             print("Downloading: " + name + '.jpg')  # 打印正在下载的图片的消息
